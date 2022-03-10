@@ -53,7 +53,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
       <main>
         <div className="logoParent">
           <img className="logo" src={require("./images/pagename.png")} />
@@ -80,7 +80,7 @@ function App() {
               <div className="date">{dateBuilder(new Date())}</div>
             </div>
             <div className="weather-box">
-              <div className="temp">{Math.round(weather.main.temp)}°c</div>
+              <div className="temp">{Math.round(weather.main.temp)}°C</div>
               <div className="weather">{weather.weather[0].main}</div>
             </div>
           </div>

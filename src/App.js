@@ -53,15 +53,7 @@ function App() {
   };
 
   return (
-    <div
-      className={
-        typeof weather.main != "undefined"
-          ? weather.main.temp > 16
-            ? "app warm"
-            : "app"
-          : "app"
-      }
-    >
+    <div>
       <main>
         <div className="logoParent">
           <img className="logo" src={require("./images/pagename.png")} />

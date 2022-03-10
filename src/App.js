@@ -13,7 +13,7 @@ function App() {
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
-          setQuery("Search Location");
+          setQuery("");
           console.log(result);
         });
     }

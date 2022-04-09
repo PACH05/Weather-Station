@@ -4,8 +4,8 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 function App() {
-  const [query, setQuery] = useState("");
-  const [weather, setWeather] = useState({});
+  const [query, setQuery] = useState(""); //Hooks
+  const [weather, setWeather] = useState({}); //Hooks
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -68,7 +68,6 @@ function App() {
               value={query}
               onKeyPress={search}
             />
-            {/* <button className="btn">Search</button> */}
           </div>
         </div>
         {typeof weather.main != "undefined" ? (

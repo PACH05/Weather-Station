@@ -8,7 +8,7 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
 };
 const Button = styled.button`
-background-color: black;
+background-color: blue;
 width:100px;
 height:43px;
 color: white;
@@ -18,9 +18,9 @@ outline: 0;
 text-transform: uppercase;
 margin: 10px 0px;
 cursor: pointer;
-transition: ease background-color 250ms;
+transition: ease background-color 1000ms;
 &:hover {
-  background-color: grey;
+  background-color: black;
 }
 &:disabled {
   cursor: default;

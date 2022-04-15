@@ -88,14 +88,14 @@ function App() {
     <div className="app">
       <main>
         <div className="logoParent">
-          <img className="logo" src={pic}/>
+          <img className="logo" src={pic}></img>
         </div>
         <div className="parentSearch">
           <div className="search-box">
             <input
               type="text"
               className="search-bar"
-              placeholder="Search Location (Press Enter to Search)"
+              placeholder="Search a Location"
               onChange={(e) => setQuery(e.target.value)}
               value={query}
               onKeyPress={search}

@@ -1,11 +1,35 @@
 import React, { useState } from "react";
+import styled from "styled-components"
+import pic from './pagename.png'
+
+
 const api = {
   key: "f36453a795e68c34a900630994b84339",
   base: "https://api.openweathermap.org/data/2.5/",
 };
+const Button = styled.button`
+background-color: black;
+width:100px;
+height:43px;
+color: white;
+padding: 5px 15px;
+border-radius: 10px;
+outline: 0;
+text-transform: uppercase;
+margin: 10px 0px;
+cursor: pointer;
+transition: ease background-color 250ms;
+&:hover {
+  background-color: grey;
+}
+&:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+`;
 function App() {
-  const [query, setQuery] = useState(""); //Hooks
-  const [weather, setWeather] = useState({}); //Hooks
+  const [query, setQuery] = useState(""); //Hook
+  const [weather, setWeather] = useState({}); 
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -18,7 +42,15 @@ function App() {
         });
     }
   };
-
+  const click = () => {
+    fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+    .then((res) => res.json())
+    .then((result) => {
+      setWeather(result);
+      setQuery("");
+      console.log(result);
+    });
+  }
   const dateBuilder = (d) => {
     let months = [
       "January",
@@ -56,7 +88,7 @@ function App() {
     <div className="app">
       <main>
         <div className="logoParent">
-          <img className="logo" src={require("./images/pagename.png")} />
+          <img className="logo" src={pic}/>
         </div>
         <div className="parentSearch">
           <div className="search-box">
@@ -68,6 +100,9 @@ function App() {
               value={query}
               onKeyPress={search}
             />
+          </div>
+          <div className="button">
+            <Button className="search" onClick={click}>Search</Button>
           </div>
         </div>
         {typeof weather.main != "undefined" ? (

@@ -47,31 +47,8 @@ main {
   align-items: center;
   padding: 1rem 10rem;
 }
-/* .btn{
-  display: flex;
-  justify-content: center;
-  width: 10%;
-  padding: 10px;
 
-  appearance: none;
-  background: rebeccapurple;
-  border: none;
-  outline: none;
-
-  background-color: rgba(77, 66, 223, 0.767);
-  border-radius: 10px 10px 10px 10px;
-  margin-top: 20px;
-  margin-left: 100px;
-
-  box-shadow: 0px 5px rgba(138, 137, 137, 0.2);
-  
-  color: #313131;
-  font-size: 20px;
-} */
 .search-box .search-bar {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* width: 80%; */
   padding: 20px;
   width: 100%;
   appearance: none;
@@ -79,12 +56,10 @@ main {
   border: none;
   outline: none;
 
-  background-color: rgba(255, 255, 255, 0.767);
+  background-color: rgba(224, 222, 222, 0.767);
   border-radius: 10px;
-  /* margin-top: 20px; */
-  /* margin-left: 80px; */
 
-  box-shadow: 0px 5px rgba(138, 137, 137, 0.2);
+  box-shadow: 0px 5px rgba(84, 84, 84, 0.2);
 
   color: #313131;
   font-size: 20px;
@@ -139,10 +114,25 @@ main {
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
+.weather-box .temp-feel {
+  position: relative;
+  display: inline-block;
+  margin: 5px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  padding: 15px 25px;
+
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
 
 .weather-box .weather {
   color: #fff;
-  font-size: 48px;
+  font-size: 30px;
   font-weight: 100;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
@@ -152,13 +142,8 @@ main {
     display: inline;
     padding: 0;
   }
-
   .search-bar {
     width: auto;
-  }
-
-  .btn {
-    margin-left: 0;
   }
 }
 

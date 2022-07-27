@@ -13,22 +13,21 @@ const Button = styled.button`
   color: white;
   padding: 5px 15px;
   border-radius: 10px;
-  outline: 0;
   text-transform: uppercase;
   margin: 10px 0px;
   cursor: pointer;
-  transition: ease background-color 1000ms;
+  transition: ease background-color 800ms;
   &:hover {
     background-color: black;
   }
   &:disabled {
     cursor: default;
-    opacity: 0.7;
+    opacity: 0.3;
   }
 `;
 function App() {
-  const [query, setQuery] = useState(""); //Hook
-  const [weather, setWeather] = useState({});
+  const [query, setQuery] = useState(""); //Hooks
+  const [weather, setWeather] = useState({}); //Hooks
 
   const search = (evt) => {
     if (evt.key === "Enter") {
@@ -94,7 +93,7 @@ function App() {
             <input
               type="text"
               className="search-bar"
-              placeholder="Search a Location"
+              placeholder="Search Places"
               onChange={(e) => setQuery(e.target.value)}
               value={query}
               onKeyPress={search}
@@ -116,11 +115,15 @@ function App() {
             </div>
             <div className="weather-box">
               <div className="temp">{Math.round(weather.main.temp)}°C</div>
-              <div className="weather">{weather.weather[0].main}</div>
+              <br></br>
+              <div className="temp-feel">{"Feels Like "+Math.ceil(weather.main.feels_like)}°C</div>
+              <br></br>
+              <div className="temp-feel">{"Humidity "+Math.ceil(weather.main.humidity)}%</div>
+              <div className="weather">{"Winds "+weather.wind.deg+" at "+Math.ceil((weather.wind.speed*(18/5))/1.862)+" knots"}</div>
             </div>
           </div>
         ) : (
-          ""
+          " "
         )}
       </main>
     </div>
